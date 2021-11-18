@@ -4,7 +4,6 @@ public class BMI {
     public static void main(String[] args) {
         BMI m = new BMI();
         m.pt1();
-        m.pt2();
         System.out.println("Chỉ số bmi: " + pt2());
         
         double bmi = m.pt3( 50, 1.6);
