@@ -6,15 +6,15 @@ public class Main {
     public static void main(String[] args) {
         double a, b, c, x1, x2, delta;
         String ketQua = "";
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         do {
             System.out.print("Nhập a (a!=0): ");
-            a = scanner.nextDouble();
+            a = sc.nextDouble();
         } while (a == 0);
         System.out.print("Nhập b: ");
-        b = scanner.nextDouble();
+        b = sc.nextDouble();
         System.out.print("Nhập c: ");
-        c = scanner.nextDouble();
+        c = sc.nextDouble();
         System.out.println("Phương trình bậc hai có dạng: "+a+"x^2 + "+b+"x + "+c+" = 0");
         delta = Math.pow(b, 2) - 4 * a * c;
         if (delta < 0) {
