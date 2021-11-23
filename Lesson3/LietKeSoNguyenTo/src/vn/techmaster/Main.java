@@ -1,7 +1,5 @@
 package vn.techmaster;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -9,14 +7,14 @@ public class Main {
         System.out.println("Tất cả các số nguyên tố nhỏ hơn 20 là: ");
         for (int i = 2; i < 20; i++) {
             if (PrimeNumber(i)) {
-                System.out.print(" " + i);
+                System.out.print(i+ "\t");
             }
         }
     }
 
     public static boolean PrimeNumber(int n) {
-        int squareRoot = (int) Math.sqrt(n);
-        for (int i = 2; i <= squareRoot; i++) {
+        int sqrt = (int) Math.sqrt(n);
+        for (int i = 2; i <= sqrt; i++) {
             if (n % i == 0) {
                 return false;
             }
