@@ -8,7 +8,7 @@ public class Main {
         String ketQua = "";
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.print("Nhập a (a # 0): ");
+            System.out.print("Nhập a (a!=0): ");
             a = scanner.nextDouble();
         } while (a == 0);
         System.out.print("Nhập b: ");
