@@ -61,7 +61,7 @@ public class Main {
 //        System.out.println("Số lớn nhất: " + Math.max(randomnumber,number));
 //
         Random rd = new Random();
-        int randomnumber = rd.nextInt(1000);
+        int randomnumber = rd.nextInt(100);
         System.out.println("Số ngẫu nhiên là: " + randomnumber);
         String s = (randomnumber%2==0) ? "Số chia hết cho 2":"Số không chia hết cho 2";
         System.out.println(s);
