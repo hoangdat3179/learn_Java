@@ -8,16 +8,14 @@ public class product {
     public String price;
     public String productType;
 
-    public product() {
-        productCode = "112";
-        name = "chair";
-        description = "3 chân";
-        number = 50;
-        price = "20k";
-        productType = "ghế đẩu";
+    public product(String productCode, String name, String description, int number, String price, String productType) {
+        this.productCode = productCode;
+        this.name = name;
+        this.description = description;
+        this.number = number;
+        this.price = price;
+        this.productType = productType;
     }
-
-
 
     @Override
     public String toString() {
