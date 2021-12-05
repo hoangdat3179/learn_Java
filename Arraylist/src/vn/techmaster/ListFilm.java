@@ -10,28 +10,34 @@ public class ListFilm {
         private String producer;
         private int year;
 
-        public int getId() {
+
+    public int getId() {
             return id;
         }
 
         public String getName() {
-            return name;
+
+        return name;
         }
 
         public String getGenre() {
-            return genre;
+
+        return genre;
         }
 
         public String getDuration() {
-            return duration;
+
+        return duration;
         }
 
         public String getProducer() {
-            return producer;
+
+        return producer;
         }
 
         public int getYearOfPublication() {
-            return year;
+
+        return year;
         }
 
         public ListFilm(int id, String name, String genre, String duration, String producer, int year) {
@@ -43,13 +49,14 @@ public class ListFilm {
             this.year = year;
         }
 
-        public void films(){
+        public static ArrayList<ListFilm> films(){
             ArrayList<ListFilm> listfilm = new ArrayList<>();
             ListFilm f = new ListFilm(1,"Money heist","Criminal,Action","5 season","Spain", 2021 );
             listfilm.add(f);
             listfilm.add(new ListFilm(2,"Squid Game","Action,Horror,Drama", "9 episodes","Korea",2021));
             listfilm.add(new ListFilm(3,"Shang-chi","Action,Adventure,Fiction","120 munites","US,China",2021));
             listfilm.add(new ListFilm(4,"Hellbound","Horror,Drama,Fiction","6 episodes","Korea",2021));
+            return listfilm;
         }
 
         @Override
