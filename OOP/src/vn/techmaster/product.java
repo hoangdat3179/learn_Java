@@ -1,28 +1,28 @@
 package vn.techmaster;
 
 public class product {
-    public int productCode;
+    public int id;
     public String name;
     public String description;
-    public int number;
-    public String price;
+    public int amount;
+    public long price;
     public String productType;
 
-    public product(int productCode, String name, String description, int number, String price, String productType) {
-        this.productCode = productCode;
+    public product(int id, String name, String description, int amount, long price, String productType) {
+        this.id = id;
         this.name = name;
         this.description = description;
-        this.number = number;
+        this.amount = amount;
         this.price = price;
         this.productType = productType;
     }
 
     @Override
     public String toString() {
-        return "Mã sản phẩm: " + productCode + '\n' +
+        return "Mã sản phẩm: " + id + '\n' +
                 "Tên sản phẩm: " + name + '\n' +
                 "Mô tả: " + description + '\n' +
-                "Số lượng: " + number + '\n' +
+                "Số lượng: " + amount + '\n' +
                 "Giá tiền: " + price + '\n' +
                 "Loại sản phẩm: " + productType + '\n';
     }
