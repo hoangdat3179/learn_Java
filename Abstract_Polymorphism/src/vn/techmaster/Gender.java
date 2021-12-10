@@ -1,12 +1,12 @@
 package vn.techmaster;
 
-public enum Sex {
-        NAM("Nam"),
-        NU("Nữ");
+public enum Gender {
+    NAM("Nam"),
+    NU("Nữ");
 
     private String value;
 
-    Sex(String value) {
+    Gender(String value) {
 
         this.value = value;
     }
@@ -16,4 +16,3 @@ public enum Sex {
         return value;
     }
 }
-

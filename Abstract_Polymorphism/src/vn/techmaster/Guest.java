@@ -6,16 +6,16 @@ public class Guest {
     private int id;
     private String name;
     private LocalDate date;
-    private Sex Sex;
+    private Gender gender;
     private String nativeCountry;
     private String Number;
     private String email;
 
-    public Guest(int id, String name, LocalDate date, Sex sex, String nativeCountry, String number, String email) {
+    public Guest(int id, String name, LocalDate date, Gender gender, String nativeCountry, String number, String email) {
         this.id = id;
         this.name = name;
         this.date = date;
-        Sex = sex;
+        this.gender = gender;
         this.nativeCountry = nativeCountry;
         Number = number;
         this.email = email;
@@ -45,12 +45,12 @@ public class Guest {
         this.date = date;
     }
 
-    public vn.techmaster.Sex getSex() {
-        return Sex;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setSex(vn.techmaster.Sex sex) {
-        Sex = sex;
+    public Gender setGender(Gender gender) {
+        return gender = gender;
     }
 
     public String getNativeCountry() {
@@ -80,14 +80,13 @@ public class Guest {
 
     @Override
     public String toString() {
-        return "Khách hàng {" +
+        return "Khách hàng " +
                 "id= " + id +
-                ", tên: '" + name + '\'' +
+                ", tên: " + name +
                 ", ngày sinh: " + Util.formatDate(date) +
-                ", Giới tính: " + Sex.getValue() +
-                ", quê quán:  '" + nativeCountry + '\'' +
-                ", số điện thoại: '" + Number + '\'' +
-                ", email: '" + email + " - "+ Validate.setEMAIL_PATTERN(email) + '\'' +
-                '}';
+                ", Giới tính: " + gender.getValue() +
+                ", quê quán:  " + nativeCountry +
+                ", số điện thoại: " + Number +
+                ", email: " + email;
     }
 }

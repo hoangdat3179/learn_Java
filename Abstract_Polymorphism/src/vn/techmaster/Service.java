@@ -7,7 +7,7 @@ public class Service {
     GuestRepo repo = new GuestRepo();
 
     public void getAllGuest() {
-        for (Guest guestRepo : repo.listGuest) {
+        for (Guest guestRepo : repo.getData()) {
             System.out.println(guestRepo);
         }
     }
@@ -28,7 +28,7 @@ public class Service {
         LocalDate date = LocalDate.of(year, month, day);
         sc.nextLine();
         System.out.print("Nhập giới tính: ");
-        Sex sex = Sex.valueOf(sc.nextLine());
+        Gender gender = Gender.valueOf(sc.nextLine());
         System.out.print("Nhập quê quán: ");
         String nativeCountry = sc.nextLine();
         System.out.print("Nhập số điện thoại: ");
@@ -36,15 +36,15 @@ public class Service {
         System.out.print("Nhập email: ");
         String email = sc.nextLine();
 
-        Guest g = new Guest(id, name, date, sex, nativeCountry, number, email);
-        repo.listGuest.add(g);
+        Guest g = new Guest(id, name, date, gender, nativeCountry, number, email);
+        repo.getData().add(g);
 
     }
 
     public void getGuestBySexNam() {
         int count = 0;
-        for (Guest guest : repo.listGuest) {
-            if (guest.getSex() == Sex.NAM) {
+        for (Guest guest : repo.getData()) {
+            if (guest.getGender() == Gender.NAM) {
                 System.out.println(guest);
                 count++;
             }
@@ -53,8 +53,8 @@ public class Service {
 
     public void getGuestBySexNu() {
         int count = 0;
-        for (Guest guest : repo.listGuest) {
-            if (guest.getSex() == Sex.NU) {
+        for (Guest guest : repo.getData()) {
+            if (guest.getGender() == Gender.NU) {
                 System.out.println(guest);
                 count++;
             }
@@ -65,7 +65,7 @@ public class Service {
         Scanner sc = new Scanner(System.in);
         int id = sc.nextInt();
         int count = 0;
-        for (Guest guest : repo.listGuest) {
+        for (Guest guest : repo.getData()) {
             if (guest.getId() == id) {
                 System.out.println(guest);
                 count++;
@@ -75,17 +75,17 @@ public class Service {
     }
 
     public void deleteGuest() {
-        for (Guest guest : repo.listGuest) {
+        for (Guest guest : repo.getData()) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Nhập id bạn cần xóa: ");
             int id = sc.nextInt();
             if (guest.getId() == id)
-                repo.listGuest.remove(guest);
+                repo.getData().remove(guest);
         }
     }
 
     public void editGuest() {
-        for (Guest guest : repo.listGuest) {
+        for (Guest guest : repo.getData()) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Nhập id bạn cần sửa: ");
             int id = sc.nextInt();
@@ -103,7 +103,7 @@ public class Service {
                 LocalDate date = LocalDate.of(year, month, day);
                 guest.setDate(date);
                 System.out.println("Nhập giới tính: ");
-                guest.setSex(Sex.valueOf(sc.nextLine()));
+                guest.setGender(Gender.valueOf(sc.nextLine()));
                 System.out.println("Nhập quê quán: ");
                 sc.nextLine();
                 guest.setNativeCountry(sc.nextLine());
@@ -111,7 +111,7 @@ public class Service {
                 guest.setNumber(sc.nextLine());
                 System.out.println("Nhập email: ");
                 guest.setEmail(sc.nextLine());
-                repo.listGuest.add(guest);
+                repo.getData().add(guest);
             }
         }
     }
