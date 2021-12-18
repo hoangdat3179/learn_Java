@@ -7,7 +7,6 @@ public class ServiceEmployee<T> {
     private ArrayList<T> al = new ArrayList<>();
 
     public void add(T obj) {
-
         al.add(obj);
     }
 
