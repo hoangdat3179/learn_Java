@@ -2,8 +2,7 @@ package vn.techmaster;
 
 import java.util.ArrayList;
 
-public class ServiceEmployee<T> {
-
+public class ServiceEmployee<T>{
     private ArrayList<T> al = new ArrayList<>();
 
     public void add(T obj) {

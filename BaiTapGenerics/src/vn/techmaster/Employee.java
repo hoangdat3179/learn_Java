@@ -6,6 +6,8 @@ public abstract class Employee {
     private int age;
     private long basicSalary;
     private Type type;
+
+
     public abstract long calculatorSalary();
 
     public Employee(int id, String name, int age, long basicSalary, Type type) {
@@ -58,6 +60,6 @@ public abstract class Employee {
     @Override
     public String toString() {
         return "ID nhân viên: " + id + " - " + "Tên nhân viên: " + name + " - " + "Tuổi: " + age + " - " +
-                "Lương cơ bản: " + basicSalary + " - " ;
+                "Lương cơ bản: " + basicSalary + " - ";
     }
 }

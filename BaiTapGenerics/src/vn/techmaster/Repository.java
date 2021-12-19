@@ -11,9 +11,9 @@ public class Repository {
 
     public static ServiceEmployee<Kitchen> addKitchen() {
         ServiceEmployee<Kitchen> listKitchen = new ServiceEmployee<>();
-        listKitchen.add(new Kitchen(1, "Ngọc", 22, 11000000, Type.Kitchen, 4100000));
-        listKitchen.add(new Kitchen(2, "Hoa", 38, 9000000, Type.Kitchen, 3000000));
-        listKitchen.add(new Kitchen(3, "Minh", 30, 10000000, Type.Kitchen, 3500000));
+        listKitchen.add(new Kitchen(4, "Ngọc", 22, 11000000, Type.Kitchen, 4100000));
+        listKitchen.add(new Kitchen(5, "Hoa", 38, 9000000, Type.Kitchen, 3000000));
+        listKitchen.add(new Kitchen(6, "Minh", 30, 10000000, Type.Kitchen, 3500000));
         return listKitchen;
     }
 }
