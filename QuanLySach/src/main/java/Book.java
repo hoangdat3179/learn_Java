@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -21,7 +22,7 @@ public class Book{
     @SerializedName("author")
     private String author;
     @SerializedName("category")
-    private ArrayList<String> category;
+    private String [] category;
     @SerializedName("publishingYear")
     private int publishingYear;
     @SerializedName("publishingCompany")
@@ -35,7 +36,7 @@ public class Book{
         return "Id sách: " + id + " - " +
                 "Tiêu đề: " + title + " - " +
                 "Tác giả: " + author + " - " +
-                "Thể loại: " + category + " - " +
+                "Thể loại: " + Arrays.toString(category) + " - " +
                 "Năm xuất bản: " + publishingYear + " - " +
                 "Nhà xuất bản: " + publishingCompany + " - " +
                 "Số trang: " + pageNumber;

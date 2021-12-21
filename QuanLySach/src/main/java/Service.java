@@ -50,34 +50,35 @@ public class Service implements IService {
         System.out.println("Nhập tên sách muốn tìm kiếm: ");
         String n = sc.nextLine();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getTitle().equalsIgnoreCase(n)) {
+            if (list.get(i).getTitle().toLowerCase().contains(n.toLowerCase())) {
                 System.out.println(list.get(i).toString());
             }
         }
     }
 
-    public void printListCategory(ArrayList<Book> list){
-        System.out.println("Nhập thể loại bạn muốn lọc: ");
+    public void printListCategory(ArrayList<Book> list) {
+        System.out.println("Nhập thể loại sách muốn tìm: ");
         String n = sc.nextLine();
-        System.out.println("In ra danh sách:");
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getCategory().contains(n)){
-                System.out.println(list.get(i));
-            }
-        }
-    }
+        for (Book book : listBook) {
 
-    public Map<String, Integer> countByCategory(){
-        Map<String, Integer> mapType = new HashMap<>();
-        for(Book book : listBook){
-            for (int i = 0; i< book.getCategory().size();i++){
-                if(mapType.get(book.getCategory().get(i)) == null){
-                    mapType.put(book.getCategory().get(i), 1);
-                }else{
-                    mapType.put(book.getCategory().get(i), mapType.get(book.getCategory().get(i)) + 1);
+            for (int i = 0; i < book.getCategory().length; i++) {
+                if (book.getCategory()[i].toLowerCase().contains(n.toLowerCase())) {
+                    System.out.println(book);
                 }
             }
         }
-        return mapType;
     }
+        public Map<String, Integer> countByCategory(){
+            Map<String, Integer> mapType = new HashMap<>();
+            for(Book book : listBook){
+                for (int i = 0; i< book.getCategory().length;i++){
+                    if(mapType.get(book.getCategory()[i]) == null){
+                        mapType.put(book.getCategory()[i], 1);
+                    }else{
+                        mapType.put(book.getCategory()[i], mapType.get(book.getCategory()[i]) + 1);
+                    }
+                }
+            }
+            return mapType;
+        }
 }
