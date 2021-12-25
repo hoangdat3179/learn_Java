@@ -7,7 +7,6 @@ import java.util.*;
 
 public class Service implements IService {
     Scanner sc = new Scanner(System.in);
-    ArrayList<Book> listBook = getData();
     public ArrayList<Book> getData() {
         ArrayList<Book> list = new ArrayList<>();
 
@@ -21,7 +20,6 @@ public class Service implements IService {
             Type objectType = new TypeToken<ArrayList<Book>>() {
             }.getType();
             list = gson.fromJson(reader, objectType);
-            System.out.println(list);
         } catch (FileNotFoundException e) {
             System.out.println("Không tìm thấy file");
         }
@@ -35,13 +33,7 @@ public class Service implements IService {
 
     @Override
     public void sortByPublishingYear(ArrayList<Book> list) {
-        Collections.sort(list, new Comparator<Book>() {
-            @Override
-            public int compare(Book o1, Book o2) {
-
-                return o1.getPublishingYear()- o2.getPublishingYear();
-            }
-        });
+        list.sort(Comparator.comparingInt(Book::getPublishingYear));
         printList(list);
     }
 
@@ -59,26 +51,20 @@ public class Service implements IService {
     public void printListCategory(ArrayList<Book> list) {
         System.out.println("Nhập thể loại sách muốn tìm: ");
         String n = sc.nextLine();
-        for (Book book : listBook) {
-
-            for (int i = 0; i < book.getCategory().length; i++) {
-                if (book.getCategory()[i].toLowerCase().contains(n.toLowerCase())) {
-                    System.out.println(book);
-                }
-            }
-        }
+        list.stream().filter(book -> Arrays.toString(book.getCategory()).toLowerCase().contains(n.toLowerCase()))
+                .forEach(System.out::println);
     }
-        public Map<String, Integer> countByCategory(){
-            Map<String, Integer> mapType = new HashMap<>();
-            for(Book book : listBook){
-                for (int i = 0; i< book.getCategory().length;i++){
-                    if(mapType.get(book.getCategory()[i]) == null){
+    public Map<String, Integer> countByCategory(ArrayList<Book> list){
+        Map<String, Integer> mapType = new HashMap<>();
+        for(Book book : list){
+            for (int i = 0; i< book.getCategory().length;i++){
+                if(mapType.get(book.getCategory()[i]) == null){
                         mapType.put(book.getCategory()[i], 1);
-                    }else{
+                }else{
                         mapType.put(book.getCategory()[i], mapType.get(book.getCategory()[i]) + 1);
-                    }
                 }
             }
-            return mapType;
         }
+        return mapType;
+    }
 }

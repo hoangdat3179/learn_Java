@@ -18,8 +18,8 @@ public class Controller {
         while (!isCheck){
             menu();
             System.out.println("Nhập lựa chọn");
-            int choose = sc.nextInt();
-            switch (choose){
+            int choice = inputNumber();
+            switch (choice){
                 case 1:
                     System.out.println("Danh sách toàn bộ sách");
                     service.printList(listBook);
@@ -30,7 +30,7 @@ public class Controller {
                     break;
                 case 3:
                     System.out.println("Đếm số phim theo thể loại");
-                    service.countByCategory();
+                    service.countByCategory(listBook);
                     count();
                     break;
                 case 4:
@@ -63,9 +63,24 @@ public class Controller {
     }
 
     public void count(){
-        Map<String, Integer> countType = service.countByCategory();
-        for (Map.Entry<String, Integer> entry : countType.entrySet()) {
+        System.out.println("Danh sách thể loại: ");
+        Map<String, Integer> categories = service.countByCategory(listBook);
+        for(Map.Entry<String, Integer> entry: categories.entrySet()){
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
+    }
+    public int inputNumber(){
+        int choice = 0;
+        boolean isContinue = false;
+        while(!isContinue){
+            try{
+                choice = Integer.parseInt(sc.nextLine());
+                isContinue = true;
+            }catch (NumberFormatException e){
+                System.out.println("Bạn chỉ được phép nhập số");
+            }
+        }
+
+        return choice;
     }
 }

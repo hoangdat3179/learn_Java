@@ -8,5 +8,5 @@ public interface IService {
     void sortByPublishingYear( ArrayList<Book> list);
     void findBookName( ArrayList<Book> list);
     void printListCategory(ArrayList<Book> list);
-    Map<String, Integer> countByCategory();
+    Map<String, Integer> countByCategory(ArrayList<Book> list);
 }
