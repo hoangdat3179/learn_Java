@@ -30,7 +30,7 @@ public class Controller {
         System.out.println("Bạn có thể thực hiện: ");
         System.out.println("1 - Dăng nhập");
         System.out.println("2 - Đăng ký");
-        System.out.println("0 - Dừng chương trình");
+        System.out.println("3 - Dừng chương trình");
         System.out.println("Lựa chọn của bạn là: ");
     }
 
