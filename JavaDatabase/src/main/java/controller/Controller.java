@@ -39,7 +39,7 @@ public class Controller {
     }
 
     public static void menu() {
-        System.out.println("Lựa chọn của bạn là:");
+        System.out.println("Lựa chọn của bạn là: ");
         System.out.println("1 - Lấy ra thông tin các phim gồm: title, description, release_year, length, rating, category của các phim có rating là PG");
         System.out.println("2 - Lấy ra title, first_name và last_name actor của các bộ phim có chứa từ ACADEMY");
         System.out.println("3 - Tìm phim theo title, với title nhập từ bàn phím");
