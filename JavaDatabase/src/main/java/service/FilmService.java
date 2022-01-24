@@ -85,4 +85,18 @@ public class FilmService {
         }
         return film;
     }
+
+    public Film updateDescription(Connection conn){
+        String query = "UPDATE film \n" +
+                "SET description = 'giiivi' \n" +
+                "WHERE title = 'ACADEMY DINOSAUR'";
+        Film film = null;
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return film;
+    }
 }

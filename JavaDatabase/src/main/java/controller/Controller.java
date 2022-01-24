@@ -50,5 +50,9 @@ public class Controller {
         String title = sc.nextLine();
         service.searchByTitle(conn,title);
     }
+
+    public void updateDescription(){
+        service.updateDescription(conn);
+    }
 }
 

@@ -61,4 +61,10 @@ public class Controller {
         String id = sc.nextLine();
         service.searchById(conn,id);
     }
+
+    public void updateUsername(){
+        System.out.println("New username: ");
+        String newusername = sc.nextLine();
+        service.updateUsername(conn,newusername);
+    }
 }

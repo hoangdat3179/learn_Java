@@ -81,4 +81,18 @@ public class UserService {
             System.out.println(list);
         }
     }
+
+    public User updateUsername(Connection conn , String newUsername){
+        String query = "UPDATE users \n" +
+                "SET username = '"+newUsername+"' \n" +
+                "WHERE id = '123'";
+        User user = null;
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
 }
