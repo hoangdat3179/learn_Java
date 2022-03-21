@@ -1,6 +1,8 @@
 package vn.techmaster;
 
-public class Person implements Comparable<Person>{
+import java.util.Comparator;
+
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
     private String address;
@@ -46,8 +48,8 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person o) {
-//        return this.getName().compareTo(o.getName());
-          return this.getAge()-o.getAge();
+        // return this.getName().compareTo(o.getName());
+        return this.getAge() - o.getAge();
 
     }
 }
